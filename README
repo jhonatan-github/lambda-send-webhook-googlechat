@@ -1,0 +1,38 @@
+# AWS Lambda Webhook Integration
+
+Este projeto contém um exemplo de uma função AWS Lambda que integra eventos do AWS SNS (Serviço de Notificação Simples) com um webhook externo. A função recebe mensagens de eventos do SNS e as envia para uma URL de webhook no formato JSON.
+
+## Configuração
+
+ Para utilizar a função é necessário configurar um bot (webhook) em um espaço do google chat que receberá as mensagens enviadas.
+
+Antes de começar, certifique-se de ter configurado corretamente as seguintes etapas:
+
+1. **Criar uma Função AWS Lambda:**
+   - Crie uma nova função AWS Lambda no Console da AWS.
+   - Use o código fornecido no arquivo `lambda_function.py`.
+   - Configure as variáveis de ambiente, como a URL do webhook, dentro das configurações da função.
+
+2. **Configurar o AWS SNS:**
+   - Configure uma notificação no AWS SNS para disparar a função Lambda quando um evento específico ocorrer.
+
+3. **Variáveis de Ambiente:**
+   - Certifique-se de definir a variável de ambiente `webhook_url` na configuração da função Lambda. Esta é a URL do webhook para a qual as mensagens serão enviadas.
+
+## Uso
+
+1. Quando um evento SNS é disparado, a função Lambda é acionada automaticamente.
+2. A mensagem do evento SNS é extraída.
+3. Uma requisição POST contendo a mensagem é enviada para a URL do webhook configurada.
+4. O webhook externo deve processar a mensagem conforme necessário.
+
+## Dependências
+
+- `httplib2`: Biblioteca para fazer solicitações HTTP.
+- `json`: Biblioteca para trabalhar com dados JSON.
+- Necessário adicionar uma Camada(layer na função com as libs) deixei o arquivo já disponível na raiz do projeto com o nome layer.zip.
+
+
+## Contribuição
+
+Sinta-se à vontade para contribuir com melhorias, correções ou recursos adicionais para este projeto. Basta abrir um pull request!
