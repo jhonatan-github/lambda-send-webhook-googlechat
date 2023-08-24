@@ -1,6 +1,6 @@
 # AWS Lambda Webhook Integration
 
-Este projeto contém um exemplo de uma função AWS Lambda que integra eventos do AWS SNS (Serviço de Notificação Simples) com um webhook externo. A função recebe mensagens de eventos do SNS e as envia para uma URL de webhook no formato JSON.
+Este projeto contém uma função AWS Lambda que integra eventos do AWS SNS (Serviço de Notificação Simples) com um webhook externo. A função recebe mensagens de eventos do SNS e as envia para uma URL de webhook no formato JSON.
 
 ## Configuração
 
